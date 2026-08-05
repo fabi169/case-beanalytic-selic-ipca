@@ -228,7 +228,6 @@ pedida pelo desafio.
 | `01_job_duas_execucoes.png` | Tela de Runs do Job, com duas execuções concluídas com sucesso |
 | `02_saida_idempotencia_execucao1.png` | Saída de `04_verificacao_idempotencia.py` após a 1ª execução do Workflow |
 | `03_saida_idempotencia_execucao2.png` | Mesma saída após a 2ª execução — contagens idênticas às da execução 1 |
-| `04_checagem_qualidade_falha.png` | (opcional) Uma checagem de qualidade forçada a falhar de propósito, mostrando a task ficando vermelha com a mensagem de erro explícita |
 | `05_tabelas_unity_catalog.png` | Catalog Explorer mostrando as tabelas Bronze/Silver/Gold registradas em `analise_taxas.selic_ipca` |
 
 ## Padrão de código
