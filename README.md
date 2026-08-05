@@ -228,7 +228,7 @@ entre a primeira e a segunda execução.
 | `01_job_duas_execucoes.png` | Tela de Runs do Job, com duas execuções concluídas com sucesso |
 | `02_saida_idempotencia_execucao1.png` | Saída de `04_verificacao_idempotencia.py` após a 1ª execução do Workflow |
 | `03_saida_idempotencia_execucao2.png` | Mesma saída após a 2ª execução — contagens idênticas às da execução 1 |
-| `03_execução_do_DLT_pipeline.png` | Execução do pipeline DLT |
+| `04_execução_do_DLT_pipeline.png` | Execução do pipeline DLT |
 | `05_tabelas_unity_catalog.png` | Catalog Explorer mostrando as tabelas Bronze/Silver/Gold registradas em `analise_taxas.selic_ipca` |
 
 
