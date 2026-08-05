@@ -1,0 +1,44 @@
+bundle:
+  name: pipeline_selic_ipca
+
+variables:
+  catalog:
+    description: Catálogo do Unity Catalog usado pelo pipeline
+    default: analise_taxas
+  schema:
+    description: Schema do Unity Catalog usado pelo pipeline
+    default: selic_ipca
+
+targets:
+  dev:
+    mode: development
+    default: true
+    # O host pode ser omitido aqui se você já tem um perfil configurado
+    # via `databricks configure` — nesse caso o bundle usa o perfil padrão.
+    # Descomente e ajuste se quiser fixar o workspace explicitamente:
+    # workspace:
+    #   host: https://<seu-workspace>.cloud.databricks.com
+
+resources:
+  jobs:
+    job_carga_geral:
+      name: "Job - Carga Geral"
+      tasks:
+        - task_key: camada_bronze
+          notebook_task:
+            notebook_path: ../notebooks/01_bronze.py
+
+        - task_key: camada_silver
+          depends_on:
+            - task_key: camada_bronze
+          notebook_task:
+            notebook_path: ../notebooks/02_silver.py
+
+        - task_key: camada_gold
+          depends_on:
+            - task_key: camada_silver
+          notebook_task:
+            notebook_path: ../notebooks/03_gold.py
+      # Nenhum job_cluster/new_cluster definido: as tasks rodam em
+      # compute serverless por padrão, igual ao que já configuramos
+      # manualmente pela UI.

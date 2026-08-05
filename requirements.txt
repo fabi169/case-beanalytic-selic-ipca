@@ -1,0 +1,7 @@
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Opcional: só necessário se for usar a flag --upload (upload automático
+# para o Volume via Databricks SDK). Sem essa flag, o script roda só com
+# requests + urllib3 acima.
+databricks-sdk>=0.20.0
