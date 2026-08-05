@@ -26,19 +26,19 @@ resources:
       tasks:
         - task_key: camada_bronze
           notebook_task:
-            notebook_path: ../notebooks/01_bronze.py
+            notebook_path: ./notebooks/01_bronze.py
 
         - task_key: camada_silver
           depends_on:
             - task_key: camada_bronze
           notebook_task:
-            notebook_path: ../notebooks/02_silver.py
+            notebook_path: ./notebooks/02_silver.py
 
         - task_key: camada_gold
           depends_on:
             - task_key: camada_silver
           notebook_task:
-            notebook_path: ../notebooks/03_gold.py
+            notebook_path: ./notebooks/03_gold.py
       # Nenhum job_cluster/new_cluster definido: as tasks rodam em
       # compute serverless por padrão, igual ao que já configuramos
       # manualmente pela UI.
